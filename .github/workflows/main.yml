@@ -1,4 +1,4 @@
-name: Java application CD
+name: Auto renew
 
 on:
   push:
@@ -16,6 +16,6 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         script: |
-          cd /opt/UniversalBazar
+          cd /home/ubuntu/autorenew/autorenew
           git pull
           pm2 restart app
